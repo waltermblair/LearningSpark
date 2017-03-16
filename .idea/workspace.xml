@@ -5,34 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8616e0ea-65bf-4084-bc56-91af4dca8960" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00000-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00001-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00002-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00003-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00004-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00005-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00006-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00007-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00008-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00009-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00010-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00011-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00000-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00001-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00002-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00003-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00004-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00005-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00006-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00007-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00008-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00009-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00010-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00011-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00000-a67abec1-529a-4253-9bba-78f6d1f1ad92.snappy.parquet.crc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00000-a67abec1-529a-4253-9bba-78f6d1f1ad92.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/._SUCCESS.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00000-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00001-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00002-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00003-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00004-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00005-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00006-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00007-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00008-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00009-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00010-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/.part-00011-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/_SUCCESS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00000-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00001-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00002-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00003-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00004-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00005-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00006-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00007-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00008-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00009-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00010-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputFile/trimmedParquet/part-00011-dfb586ce-b502-4858-8862-14c0242dafa2.snappy.parquet" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/TrimS.scala" afterPath="$PROJECT_DIR$/src/main/scala/TrimS.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -76,8 +75,8 @@
       <file leaf-file-name="TrimS.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/TrimS.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            <state relative-caret-position="149">
+              <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#44#97#0" expanded="true" />
@@ -846,8 +845,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/TrimS.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        <state relative-caret-position="149">
+          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#44#97#0" expanded="true" />
