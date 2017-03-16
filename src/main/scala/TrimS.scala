@@ -26,7 +26,7 @@ object TrimS {
     // commented out manual parser from fastq
     // current version uses a bash script to convert fastq to csv
     // and then loads csv directly
-    val filepath = "/home/walter/lab/data/fastq.csv"
+    val filepath = args(0)
 
     val ds = spark.read
         .option("inferSchema", true)
