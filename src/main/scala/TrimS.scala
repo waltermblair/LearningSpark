@@ -6,7 +6,7 @@ import org.apache.avro.generic.GenericData.StringType
 import org.apache.calcite.avatica.ColumnMetaData.StructType
 import org.apache.commons.math3.analysis.function.Max
 import org.apache.spark.SparkContext
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{Dataset, SparkSession}
 
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
@@ -24,22 +24,29 @@ object TrimS {
     val spark = SparkSession
       .builder()
       .appName("Scala Trimmer")
-//      .master("local")    // for testing in IntelliJ
+      .master("local")    // for testing in IntelliJ
       .getOrCreate()
 
+
+    val fastqFilepath = args(0)
+    val ds = allTrims(readFastq(fastqFilepath, spark), spark)
+    writeFastq(ds, "fastqTrimS.fastq", spark)
+
+    // write out to parquet (can send straight to next step)
+    ds.write.parquet("outputParquet/trimmedParquet")
+
+  }
+
+  def writeFastq(ds: Dataset[Read], outFilepath: String, spark: SparkSession) = {
     import spark.implicits._
+    ds.map(
 
-    // going back to fastq direct
-    // commented out manual parser from fastq
-    // current version uses a bash script to convert fastq to csv
-    // and then loads csv directly
-    // https://github.com/databricks/spark-csv
-    val filepath = args(0)
+    ).toDF().toJavaRDD.saveAsTextFile(outFilepath)
+  }
 
-    // FASTQ version
-    // http://stackoverflow.com/questions/39901732/how-can-i-extact-multi-line-record-from-a-text-file-with-spark?rq=1
-    // *****************************
-    val fastqRaw = spark.sparkContext.wholeTextFiles(filepath).flatMap(x => x._2.split("\n@"))
+  def readFastq(fastqFilepath: String, spark: SparkSession): Dataset[Read] = {
+    import spark.implicits._
+    val fastqRaw = spark.sparkContext.wholeTextFiles(fastqFilepath).flatMap(x => x._2.split("\n@"))
     val ds = fastqRaw.map(
       reads_info => {
         val read_info = reads_info.split("\n")
@@ -62,45 +69,23 @@ object TrimS {
         (name1, seq, name2, phred)
       }
     ).toDF("name1", "seq", "name2", "phred").as[Read]
-    // ******************************
+    return ds
+  }
 
-     // CSV version
-    /*val ds = spark.read
-        .option("inferSchema", true)
-        .option("header", false)
-        .option("delimiter", "z")
-        .csv(filepath)
-        .toDF("name1", "seq", "name2", "phred")*/
-
+  def allTrims(ds: Dataset[Read], spark: SparkSession): Dataset[Read] = {
+    import spark.implicits._
     //// Find index of the bad phred score and trim with that num
     //// http://stackoverflow.com/questions/15259250/in-scala-how-to-get-a-slice-of-a-list-from-nth-element-to-the-end-of-the-list-w
     val badScoresArray = Array('!', '\"', '#', '$', '%', '&')
-
-    //http://alvinalexander.com/scala/scala-mutable-arrays-adding-elements-to-arrays
-/*    var data = ListBuffer[Read]()
-
-    //http://stackoverflow.com/questions/30863747/reading-a-text-file-in-scala-one-line-after-the-other-not-iterated
-    for(line <- Source.fromFile(args(0)).getLines().grouped(4)) {
-      data += Read(line(0), line(1), line(2), line(3))
-    }*/
-
-    //converting mutable ArrayBuffer to RDD, then to DF, then to DS
-//    val ds = spark.sparkContext.makeRDD(data).toDF().as[Read]
-
     // Does using regex condition perform better?
     val badScoresRegex = """[!,",#,%,&]""".r
     ds
-      .select($"seq", $"phred")
+      .select("seq", "phred")
       //.map(row => if(badScoresRegex.findFirstIn(row.getString(1)) != None) leadingTrim(row.getString(0), row.getString(1), badScoresArray) else row.getString(0))
       .map(row => (row.getString(0), leadingTrim(row.getString(0), row.getString(1), badScoresArray), trailingTrim(row.getString(0), row.getString(1), badScoresArray)))
       .select($"_1".alias("original"), $"_2".alias("leading trim"), $"_3".alias("trailing trim"))
       .show(100, false)
-
-    // write out to parquet (can send straight to next step)
-    ds.write.parquet("outputParquet/trimmedParquet")
-
-    // configure spark-csv to write out to csv http://stackoverflow.com/questions/31937958/how-to-export-data-from-spark-sql-to-csv
-
+    return ds
   }
 
   def leadingTrim(seq: String, phred: String, badScoresArray: Array[Char]): String = {

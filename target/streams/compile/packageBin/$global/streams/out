@@ -1,0 +1,23 @@
+[0m[[0minfo[0m] [0mPackaging /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/learningspark_2.11-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	TrimS$$anonfun$trailingTrim$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimS$$anonfun$trailingTrim$1.class[0m
+[0m[[0mdebug[0m] [0m	build.sbt[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/build.sbt[0m
+[0m[[0mdebug[0m] [0m	TrimS$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimS$.class[0m
+[0m[[0mdebug[0m] [0m	TrimPipes.txt[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimPipes.txt[0m
+[0m[[0mdebug[0m] [0m	TrimS.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimS.class[0m
+[0m[[0mdebug[0m] [0m	Read.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/Read.class[0m
+[0m[[0mdebug[0m] [0m	TrimS$$typecreator1$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimS$$typecreator1$1.class[0m
+[0m[[0mdebug[0m] [0m	TrimS$$anonfun$leadingTrim$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimS$$anonfun$leadingTrim$1.class[0m
+[0m[[0mdebug[0m] [0m	TrimS$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimS$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	TrimJ.class[0m
+[0m[[0mdebug[0m] [0m	  /home/walter/IdeaProjects/LearningSpark/target/scala-2.11/classes/TrimJ.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
