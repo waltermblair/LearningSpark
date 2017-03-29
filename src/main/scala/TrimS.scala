@@ -2,15 +2,21 @@
   * Created by walter on 2/24/17.
   */
 
+import org.apache.avro.generic.GenericData.StringType
+import org.apache.calcite.avatica.ColumnMetaData.StructType
 import org.apache.commons.math3.analysis.function.Max
+import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
+
+import scala.collection.mutable.ListBuffer
+import scala.io.Source
 
 //import scala.collection.mutable.ArrayBuffer
 //import scala.io.Source
 
 object TrimS {
   // case class must be defined outside of scope
-//  case class Read(name1: String, seq: String, name2: String, phred: String)
+  case class Read(name1: String, seq: String, name2: String, phred: String)
 
   def main(args: Array[String]) {
     // Create SparkSession https://databricks.com/blog/2016/08/15/how-to-use-sparksession-in-apache-spark-2-0.html
@@ -18,36 +24,67 @@ object TrimS {
     val spark = SparkSession
       .builder()
       .appName("Scala Trimmer")
-      .master("local")
+//      .master("local")    // for testing in IntelliJ
       .getOrCreate()
 
     import spark.implicits._
 
+    // going back to fastq direct
     // commented out manual parser from fastq
     // current version uses a bash script to convert fastq to csv
     // and then loads csv directly
+    // https://github.com/databricks/spark-csv
     val filepath = args(0)
 
-    val ds = spark.read
+    // FASTQ version
+    // http://stackoverflow.com/questions/39901732/how-can-i-extact-multi-line-record-from-a-text-file-with-spark?rq=1
+    // *****************************
+    val fastqRaw = spark.sparkContext.wholeTextFiles(filepath).flatMap(x => x._2.split("\n@"))
+    val ds = fastqRaw.map(
+      reads_info => {
+        val read_info = reads_info.split("\n")
+        val seqRegex = """[A, T, G, C]""".r
+        var name1 = ""
+        var seq = ""
+        var name2 =""
+        var phred = ""
+        for(x <- read_info) {
+          if(x.toString().startsWith("@SRR") || x.toString().startsWith("SRR")){
+            name1 = x.toString()
+          } else if(seqRegex.findFirstIn(x.toString().substring(0, 1)) != None){
+            seq = x.toString()
+          } else if(x.toString().startsWith("+SRR")){
+            name2 = x.toString()
+          } else{
+            phred = x.toString()
+          }
+        }
+        (name1, seq, name2, phred)
+      }
+    ).toDF("name1", "seq", "name2", "phred").as[Read]
+    // ******************************
+
+     // CSV version
+    /*val ds = spark.read
         .option("inferSchema", true)
-        .option("header", true)
+        .option("header", false)
+        .option("delimiter", "z")
         .csv(filepath)
-        .toDF("name1", "seq", "name2", "phred")
+        .toDF("name1", "seq", "name2", "phred")*/
 
     //// Find index of the bad phred score and trim with that num
     //// http://stackoverflow.com/questions/15259250/in-scala-how-to-get-a-slice-of-a-list-from-nth-element-to-the-end-of-the-list-w
     val badScoresArray = Array('!', '\"', '#', '$', '%', '&')
 
     //http://alvinalexander.com/scala/scala-mutable-arrays-adding-elements-to-arrays
-//    var data = ArrayBuffer[Read]()
+/*    var data = ListBuffer[Read]()
 
     //http://stackoverflow.com/questions/30863747/reading-a-text-file-in-scala-one-line-after-the-other-not-iterated
-//    for(line <- Source.fromFile("SRAdump.txt").getLines().grouped(4)) {
-//      //noinspection ZeroIndexToHead
-//      data += Read(line(0), line(1), line(2), line(3))
-//    }
+    for(line <- Source.fromFile(args(0)).getLines().grouped(4)) {
+      data += Read(line(0), line(1), line(2), line(3))
+    }*/
 
-    // converting mutable ArrayBuffer to RDD, then to DF, then to DS
+    //converting mutable ArrayBuffer to RDD, then to DF, then to DS
 //    val ds = spark.sparkContext.makeRDD(data).toDF().as[Read]
 
     // Does using regex condition perform better?
@@ -60,7 +97,7 @@ object TrimS {
       .show(100, false)
 
     // write out to parquet (can send straight to next step)
-    ds.write.parquet("outputFile/trimmedParquet")
+    ds.write.parquet("outputParquet/trimmedParquet")
 
     // configure spark-csv to write out to csv http://stackoverflow.com/questions/31937958/how-to-export-data-from-spark-sql-to-csv
 
