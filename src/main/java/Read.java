@@ -17,6 +17,12 @@ public class Read implements Serializable {
     private String name2;
     private String phred;
 
+    public Read(String name1, String seq, String name2, String phred) {
+        this.name1 = name1;
+        this.seq = seq;
+        this.name2 = name2;
+        this.phred = phred;
+    }
 
     public String getName1() {
         return name1;
